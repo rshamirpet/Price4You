@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+	<title>Price Comparision</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/home.css' %}" >
+	<script src="https://use.fontawesome.com/02cfcb3bc4.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top abc">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Price4You</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-nav-demo">
+                <form class="navbar-form navbar-left" method="POST">
+                    <div class="form-group">
+                        <!-- <input type="text" class="form-control" placeholder="Search"> -->
+						{% csrf_token %}
+                        {% for fm in form %}
+                        {{ fm }}
+                        {% endfor %}
+                        <button type="submit" style="display: none;">search</button>
+                    </div>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="d" href="{% url 'login' %}">Login <i class="fa fa-user" aria-hidden="true"></i> 
+                    </a></li>
+                    <li><a class="d" href="{% url 'signup' %}">Signup <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    </a></li>
+                    <li><a class="d" href="{% url 'update' %}"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></a></li>
+                    <li><a class="d" href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bkl">
+        <div class="big">
+            <a href="{% url 'list' 'mobiles' %}">
+                <div class="box1">
+                    <img src="{% static 'main/images/card-1_132698011.png'%}">
+                    <div class="bu">
+                        <button type="button">Mobile Phones</button>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'list' 'laptops' %}">
+                <div class="box2">
+                    <img src="{% static 'main/images/card-2_628627137.png'%}">
+                    <div class="bu">
+                        <button type="button" herf="#">Laptops</button>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'list' 'ac' %}">
+                <div class="box3">
+                    <img src="{% static 'main/images/card-3_245943451.png'%}">
+                    <div class="bu">
+                        <button type="button" herf="#">Air Conditioners</button>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'list' 'tv' %}">
+                <div class="box4">
+                    <img src="{% static 'main/images/card-4_906173506.png'%}">
+                    <div class="bu">
+                        <button type="button" herf="#">Televisions</button>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'list' 'refrigerators' %}">
+                <div class="box5">
+                    <img src="{% static 'main/images/card-5_911816166.png'%}">
+                    <div class="bu">
+                        <button type="button" herf="#">Refrigerator</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>
+        <div class="pd"><b>Popular Deals</b> </div>
+    </h2>
+    <div class="deal">
+        <div class="box1">
+            <div class="image">
+                <img src="{% static 'main/images/v16_238.png'%}">
+            </div>
+            <div class="desc">
+                <b>Realme 7 Pro</b>
+            </div>
+            <a href="https://www.amazon.in/Realme-Pro-Mirror-Blue-128/dp/B08HMY2WDB/ref=sr_1_3?dchild=1&keywords=realme+7+pro&qid=1620196012&sr=8-3"><button type="button" class="bbb" herf="#"><b>Get More Details</b></button></a>
+        </div>
+
+        <div class="box1">
+            <img src="{% static 'main/images/v16_387.png'%}">
+            <div class="desc">
+                <b>Whirlpool Fridge</b>
+            </div>
+            <a href="https://www.amazon.in/Whirlpool-Refrigerator-215-ROY-INV/dp/B08CS3FKFY/ref=sr_1_3?dchild=1&keywords=Whirlpool+Fridge&qid=1620196079&sr=8-3"><button type="button" class="bbb" herf="#"><b>Get More Details</b></button></a>
+        </div>
+
+        <div class="box1">
+            <img src="https://m.media-amazon.com/images/I/81qtALn+GpL._AC_UY327_QL65_.jpg">
+            <div class="desc">
+                <b>OnePlus 80 Smart TV</b>
+            </div>
+            <a href="https://www.amazon.in/OnePlus-inches-Ready-Android-32Y1/dp/B08B42LWKN/ref=sr_1_5?dchild=1&keywords=Realme+Smart+TV&qid=1620196210&sr=8-5"><button type="button" class="bbb" herf="#"><b>Get More Details</b></button></a>
+        </div>
+
+        <div class="box1">
+            <img src="{% static 'main/images/v16_415.png'%}">
+            <div class="desc">
+                <b>Oneplus 9 Pro</b>
+            </div>
+            <a href="https://www.amazon.in/Test-Exclusive_2020_1166-Multi-3GB-Storage/dp/B089MS7D9K/ref=sr_1_3?dchild=1&keywords=Oneplus+9+Pro&qid=1620196301&sr=8-3"><button type="button" class="bbb" herf="#"><b>Get More Details</b></button></a>
+        </div>
+
+		<div class="box1">
+            <img src="https://m.media-amazon.com/images/I/51jPUwqQTFL._AC_UY327_QL65_.jpg">
+            <div class="desc">
+                <b>Dell Inspiron 3502 </b>
+            </div>
+            <a href="https://www.amazon.in/Dell-Inspiron-Integrated-Graphics-D560427WIN9BE/dp/B08X4N3DW2/ref=sr_1_3?dchild=1&keywords=dell+laptop&qid=1620196341&sr=8-3"><button type="button" class="bbb" herf="#"><b>Get More Details</b></button></a>
+        </div>
+
+        <div class="box1">
+            <img src="https://m.media-amazon.com/images/I/61Vs-rdtqvL._AC_UY327_QL65_.jpg">
+            <div class="desc">
+                <b>Whirlpool 1.5 Ton 3 Star </b>
+            </div>
+            <a href="https://www.amazon.in/Whirlpool-1-5T-MAGICOOL-PRO-COPR/dp/B07P5HJJW8/ref=sr_1_5?dchild=1&keywords=ac&qid=1620196445&sr=8-5"><button type="button" class="bbb" herf="#"><b>Get More Details</b></button></a>
+        </div>
+
+    </div>
+    <div class="footer">
+        <a href="{% url 'contactUs' %}" class="container1">Contact us</a>
+        <a href="{% url 'about' %}" class="container1">About us</a>
+        <a href="{% url 'faq' %}" class="container1">FAQs</a>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>
